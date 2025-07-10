@@ -27,7 +27,7 @@ jobs:
         docker build -t helloinfra:latest .
 
     - name: Escanear imagen con Trivy
-      uses: aquasecurity/trivy-action@v0.16.2
+      uses: aquasecurity/trivy-action@0.28.0
       with:
         image-ref: helloinfra:latest
         format: table
