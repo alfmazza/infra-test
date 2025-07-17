@@ -20,10 +20,7 @@ jobs:
         java-version: '17'
 
     - name: Analizar codigo con Sonarqube
-      run: mvn verify sonar:sonar \
-        -Dsonar.projectKey=helloinfra \
-        -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
-        -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+      run: mvn verify sonar:sonar -Dsonar.projectKey=helloinfra -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
     - name: Build con Maven
       run: mvn clean package
